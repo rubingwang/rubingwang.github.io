@@ -120,7 +120,7 @@
       height: calc(100% + 20px);
       background:
         linear-gradient(rgba(255,255,255,0.48), rgba(243,246,249,0.48)),
-        url('images/background/leuven.png');
+        url('images/background/background-2.jpg');
       background-size: cover;
       background-position: center;
       border-radius: 12px;
@@ -213,52 +213,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
   </div>
 </header>
+<!-- START: Replace this entire block with the new profile-cover -->
+<div id="profile-cover" class="cover shallow-bg img-responsive" style="padding: 28px 0;">
+  <div id="profile-namecard" class="profile-wrapper wrapper-light" style="display:flex; align-items:center; gap:20px; max-width:1100px; margin:0 auto;">
 
-  <div id="profile-cover" class="cover shallow-bg img-responsive"> 
-    <div id="profile-namecard" class="profile-wrapper wrapper-light">
-      <div id="my-pic" class="profile-col profile-col-1">
-        <div class="avatar-bg"></div>
-        <img id="profile-avatar" src="images/myself.jpg" alt="Me" class="profile-avatar" />
-      </div>
-      <div id="my-contact" class="profile-col profile-col-2">
-        <div id="my-name" class="text-grey-dark">
-          Rubing WANG<br>
-        </div>
-        <div id="my-title" class="text-grey">
-          Master in Applied Economics, IE Business School (Madrid)
-        </div>
-        <div id="my-email" class="text-grey-light">
-            rubing.wang [at] outlook.com
-          </div>
-
-          <div class="social-media">
-            <a href="https://github.com/rubingwang" target="_blank" class="icon-button github">
-              <i class="fa fa-github icon-github"></i>
-              <span></span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/rubingwang/" target="_blank" class="icon-button linkedin">
-              <i class="fa fa-linkedin icon-linkedin"></i>
-              <span></span>
-            </a>
-
-            <a href="mailto:rubing.wang@outlook.com" target="_blank" class="icon-button linkedin">
-              <i class="fa fa-envelope icon-linkedin"></i>
-              <span></span>
-            </a>
-          </div>
-        </div>
-
-      <!-- <div id="my-desc" class="profile-col profile-col-2 hide">
-        <div id="my-desc-title">
-          Another me.
-        </div>
-        <div id="my-desc-content">
-          I enjoy running, traveling, hiking, movies, music and so much more<br>
-        </div>
-      </div> -->
+    <!-- LEFT: Avatar (NOT circular) -->
+    <div id="my-pic" class="profile-col profile-col-1"
+         style="flex: 0 0 auto; transform: translateX(-18px);">
+      <img
+        src="images/myself.jpg"
+        alt="Rubing Wang"
+        id="profile-avatar"
+        style="
+          display:block;
+          width: 280px;            /* base size * 1.2 (if original was 160px) */
+          height: auto;
+          max-width: 40vw;         /* responsive cap on small screens */
+          object-fit: cover;
+          border-radius: 0px;      /* slightly rounded rectangle; set to 0 if you want perfect square */
+          box-shadow: none;
+          border: none;
+        "
+      />
     </div>
+
+    <!-- RIGHT: Contact & Info -->
+    <div id="my-contact" class="profile-col profile-col-2" style="flex:1 1 auto; min-width:220px;">
+      <div id="my-name" class="text-grey-dark" style="font-size:1.4rem; font-weight:700; line-height:1.1;">
+        Rubing WANG
+      </div>
+
+      <div class="text-grey" style="margin-top:6px; font-size:1rem;">
+        Master Student in Applied Economics
+      </div>
+
+      <div class="text-grey" style="margin-top:4px; font-size:0.98rem;">
+        IE Business School
+      </div>
+
+      <div id="my-email" class="text-grey-light" style="margin-top:8px; font-size:0.95rem;">
+        rubing.wang [at] outlook.com
+      </div>
+
+      <div class="social-media" style="margin-top:10px; display:flex; gap:10px; align-items:center;">
+        <a href="https://github.com/rubingwang" target="_blank" class="icon-button github" style="text-decoration:none;">
+          <i class="fa fa-github icon-github" aria-hidden="true"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/rubingwang/" target="_blank" class="icon-button linkedin" style="text-decoration:none;">
+          <i class="fa fa-linkedin icon-linkedin" aria-hidden="true"></i>
+        </a>
+
+        <a href="mailto:rubing.wang@outlook.com" class="icon-button email" style="text-decoration:none;">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+
   </div>
+</div>
+
+<!-- RESPONSIVE SAFEGUARD: small-screen adjustments -->
+<style>
+  @media (max-width: 700px) {
+    #profile-namecard { flex-direction: column; align-items: center; gap:12px; padding: 8px 12px; }
+    #my-pic { transform: translateX(0) !important; } /* cancel left-shift on small screens */
+    #profile-avatar { width: 36vw !important; max-width: 160px !important; }
+    #my-contact { text-align: center; }
+  }
+</style>
+<!-- END: Replace -->
+
   <!-- <script type="text/javascript">
     function deepFeature()
     {
